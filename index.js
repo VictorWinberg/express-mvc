@@ -35,7 +35,7 @@ app.get('/users', user.list)
 app.get('/user/:user_id', user.before, user.show)
 app.put('/user/:user_id', user.before, user.update)
 app.get('/user/:user_id/edit', user.before, user.edit)
-app.post('/user/:user_id/pet', user_pet.create)
+app.post('/user/:user_id/pet', user.before, user_pet.create)
 
 app.get('/pet/:pet_id', pet.before, pet.show)
 app.put('/pet/:pet_id', pet.before, pet.update)
