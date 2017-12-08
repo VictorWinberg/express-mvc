@@ -32,6 +32,8 @@ app.use(methodOverride('_method'))
 app.get('/', main.index)
 
 app.get('/users', user.list)
+app.post('/users', user.create)
+
 app.get('/user/:user_id', user.before, user.show)
 app.put('/user/:user_id', user.before, user.update)
 app.get('/user/:user_id/edit', user.before, user.edit)

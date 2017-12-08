@@ -2,7 +2,7 @@
  * Models index
  */
 
-const user = require('./user')
-const pet = require('./pet')
+const User = require('./user')
+const Pet = require('./pet')
 
-module.exports = { user, pet }
+module.exports = { User, Pet }

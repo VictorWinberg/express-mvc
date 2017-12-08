@@ -2,13 +2,14 @@
  * Pet Controller
  */
 
-var db = require('../db')
+var { Pet } = require('../models')
 
 exports.before = function(req, res, next){
-  var pet = db.pets[req.params.pet_id]
-  if (!pet) return next('route')
-  req.pet = pet
-  next()
+  Pet.getById(req.params.pet_id, function(err, pet) {
+    if (!pet) return next('route')
+    req.pet = pet
+    next()
+  })
 }
 
 exports.show = function(req, res, next){
