@@ -13,6 +13,8 @@ users.push({ name: 'TJ', pets: [pets[0], pets[1], pets[2]], id: 0  })
 users.push({ name: 'Guillermo', pets: [pets[3]], id: 1 })
 users.push({ name: 'Nathan', pets: [], id: 2 })
 
+
+// fake mysql query
 exports.query = function(p1, p2, p3) {
   if (typeof p3 == 'undefined')
     query_1(p1, p2)
