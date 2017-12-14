@@ -1,2 +1,2 @@
 # express-mvc
-Model View Controller framework with Node.js and Express.js
+Model View Controller boilerplate with Node.js and Express.js
