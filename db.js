@@ -51,6 +51,18 @@ query_2 = function(sql, values, done) {
       pets.push(pet)
       users[userId].pets.push(pet)
       break
+    case 'UPDATE users SET name = ? WHERE user_id = ?':
+      [name, userId] = values
+      user = users[userId]
+      user.name = name
+      done(null, user)
+      break
+    case 'UPDATE pets SET name = ? WHERE pet_id = ?':
+      [name, petId] = values
+      pet = pets[petId]
+      pet.name = name
+      done(null, pet)
+      break
     default:
       break
   }

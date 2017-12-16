@@ -22,7 +22,8 @@ exports.edit = function(req, res, next){
 
 exports.update = function(req, res, next){
   var body = req.body
-  req.pet.name = body.pet.name
-  // res.message('Information updated!')
-  res.redirect('/pet/' + req.pet.id)
+  Pet.update(body.pet.name, req.pet.id, function(err, pet) {
+    // res.message('Information updated!')
+    res.redirect('/pet/' + pet.id)
+  })
 }

@@ -33,15 +33,16 @@ exports.show = function(req, res, next){
 
 exports.create = function(req, res, next){
   var body = req.body
-  User.create(body.user.name, function(err, userId) {
+  User.create(body.user.name, function(err, user) {
     // res.message('Created user ' + body.user.name)
-    res.redirect('/user/' + userId)
+    res.redirect('/user/' + user.id)
   })
 }
 
 exports.update = function(req, res, next){
   var body = req.body
-  req.user.name = body.user.name
-  // res.message('Information updated!')
-  res.redirect('/user/' + req.user.id)
+  User.update(body.user.name, req.user.id, function(err, user) {
+    // res.message('Information updated!')
+    res.redirect('/user/' + user.id)
+  })
 }

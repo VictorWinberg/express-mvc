@@ -9,7 +9,16 @@ exports.create = function(name, done) {
 
   db.query('INSERT INTO users (name) VALUES(?)', name, function(err, user) {
     if (err) return done(err)
-    done(null, user.id)
+    done(null, user)
+  })
+}
+
+exports.update = function(name, userId, done) {
+  var values = [name, userId]
+
+  db.query('UPDATE users SET name = ? WHERE user_id = ?', values, function(err, user) {
+    if(err) return done(err)
+    done(null, user)
   })
 }
 
