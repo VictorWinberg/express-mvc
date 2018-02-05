@@ -1,0 +1,23 @@
+{
+  "name": "express-mvc",
+  "version": "1.0.0",
+  "description": "Model View Controller boilerplate with Node.js and Express.js",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VictorWinberg/express-mvc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VictorWinberg/express-mvc/issues"
+  },
+  "homepage": "https://github.com/VictorWinberg/express-mvc#readme"
+}
